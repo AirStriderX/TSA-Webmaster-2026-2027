@@ -1,0 +1,18 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 96 96" width="96" height="96" role="img" aria-labelledby="title">
+  <title id="title">Prompt Crafter badge</title>
+  <!-- Seal -->
+  <circle cx="48" cy="48" r="46" fill="#fbf9f4" stroke="#285239" stroke-width="3"/>
+  <circle cx="48" cy="48" r="40.5" fill="none" stroke="#285239" stroke-width="4" stroke-dasharray="1.6 3.7"/>
+  <circle cx="48" cy="48" r="35" fill="#f8edb8" stroke="#151b17" stroke-width="1.5"/>
+  <!-- Prompt brackets -->
+  <g fill="none" stroke="#151b17" stroke-width="3" stroke-linecap="round" stroke-linejoin="round">
+    <polyline points="31,34 24,48 31,62"/>
+    <polyline points="65,34 72,48 65,62"/>
+  </g>
+  <!-- Pen nib: writing the prompt -->
+  <path d="M48 27 L57 45 L52 62 L44 62 L39 45 Z" fill="#151b17"/>
+  <path d="M48 27 L57 45 L52 62 L48 62 Z" fill="#285239"/>
+  <line x1="48" y1="38" x2="48" y2="55" stroke="#fbf9f4" stroke-width="1.6" stroke-linecap="round"/>
+  <circle cx="48" cy="46" r="2.4" fill="#fbf9f4"/>
+  <rect x="42" y="62" width="12" height="6" rx="1" fill="#151b17"/>
+</svg>

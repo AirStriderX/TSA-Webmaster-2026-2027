@@ -1,0 +1,160 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Final Challenge | VeriMind</title>
+  <meta name="description" content="A 10-question final covering AI foundations, prompt engineering, and ethical AI. Score 8 or higher to unlock a printable certificate." />
+  <link rel="stylesheet" href="style.css" />
+  <script src="js/progress.js" defer></script>
+  <script src="js/quiz.js" defer></script>
+</head>
+<body data-page="challenge">
+  <a class="skip-link" href="#main">Skip to main content</a>
+  <div class="page">
+    <header class="floating-nav">
+      <a href="index.html" class="brand" aria-label="VeriMind home">
+        <span class="brand-icon" aria-hidden="true"></span>
+        <span class="brand-text">VERIMIND</span>
+      </a>
+
+      <nav class="nav-links" aria-label="Main Navigation">
+        <a href="index.html">Dashboard</a>
+        <a href="foundations.html">Foundations</a>
+        <a href="tools.html">Tools</a>
+        <a href="ethics.html">Ethics</a>
+        <a href="challenge.html" class="active" aria-current="page">Challenge</a>
+      </nav>
+
+      <div class="xp-badge" id="nav-xp">0 / 400 XP</div>
+    </header>
+
+    <aside class="judge-banner" id="judge-banner" aria-label="Judge tour" hidden></aside>
+
+    <main id="main">
+      <section class="container hero hero-module">
+        <span class="eyebrow">Final challenge • +100 XP</span>
+        <h1>Final Challenge</h1>
+        <p class="hero-desc">
+          Ten questions that cover all three modules. Get 8 right and you hit 400 XP, reach the AI Architect rank, and unlock a certificate with your name on it.
+        </p>
+        <div class="hero-buttons">
+          <a href="#challenge-title" class="btn-primary">Start the challenge</a>
+          <a href="index.html" class="btn-secondary">Back to the dashboard</a>
+        </div>
+      </section>
+
+      <!-- Quiz: locked until all three badges are earned (or Judge Demo Mode is on) -->
+      <section class="container section-block" aria-labelledby="challenge-title">
+        <div class="section-heading">
+          <h2 id="challenge-title">The challenge</h2>
+        </div>
+
+        <div class="lock-panel" id="challenge-locked">
+          <h3>Locked until you earn all three badges</h3>
+          <p>
+            Each module ends with a game that earns its badge. Once you have all three, the questions show up right here. Judges can flip on Judge Demo Mode in the footer to skip ahead.
+          </p>
+          <div class="grid-3">
+            <div class="badge-card" data-badge-slot="foundations">
+              <div class="badge-circle">
+                <span class="badge-number" aria-hidden="true">01</span>
+                <img class="badge-art" src="assets/badge-foundations.svg" alt="" width="52" height="52" />
+              </div>
+              <h3>Neural Navigator</h3>
+              <a href="foundations.html#claims-title">Play Real or Robot?</a>
+              <span class="badge-status">Locked</span>
+            </div>
+            <div class="badge-card" data-badge-slot="tools">
+              <div class="badge-circle">
+                <span class="badge-number" aria-hidden="true">02</span>
+                <img class="badge-art" src="assets/badge-tools.svg" alt="" width="52" height="52" />
+              </div>
+              <h3>Prompt Crafter</h3>
+              <a href="tools.html#citation-title">Open the Citation Lab</a>
+              <span class="badge-status">Locked</span>
+            </div>
+            <div class="badge-card" data-badge-slot="ethics">
+              <div class="badge-circle">
+                <span class="badge-number" aria-hidden="true">03</span>
+                <img class="badge-art" src="assets/badge-ethics.svg" alt="" width="52" height="52" />
+              </div>
+              <h3>Ethics Guardian</h3>
+              <a href="ethics.html#spotter-title">Open the Deepfake Spotter</a>
+              <span class="badge-status">Locked</span>
+            </div>
+          </div>
+        </div>
+
+        <div class="lab" id="challenge-quiz" hidden>
+          <div class="lab-head">
+            <span>Final Challenge</span>
+            <span id="quiz-best">Pass mark: 8 of 10</span>
+          </div>
+          <div class="lab-body" id="quiz"></div>
+        </div>
+      </section>
+
+      <!-- Certificate: unlocked by a passing score (or Judge Demo Mode) -->
+      <section class="container section-block" id="certificate-section" aria-labelledby="cert-heading" hidden>
+        <div class="section-heading">
+          <h2 id="cert-heading">Your certificate</h2>
+        </div>
+
+        <div class="cert-tools">
+          <div class="field">
+            <label class="field-label" for="cert-name">Your name, the way you want it printed</label>
+            <input class="text-input" type="text" id="cert-name" maxlength="60" autocomplete="name" spellcheck="false" aria-describedby="cert-name-help" />
+            <p class="field-help" id="cert-name-help" aria-live="polite">Saved in this browser only.</p>
+          </div>
+          <button type="button" class="btn-primary" id="print-cert">Print certificate</button>
+        </div>
+
+        <article class="certificate" id="certificate" aria-label="Certificate of Completion">
+          <span class="cert-demo-stamp" id="cert-demo-stamp" hidden>Demo preview</span>
+          <p class="cert-kicker">VeriMind AI Literacy Course</p>
+          <h3 class="cert-title">Certificate of Completion</h3>
+          <p class="cert-presented">This certifies that</p>
+          <p class="cert-name is-placeholder" id="cert-name-display">Your name here</p>
+          <p class="cert-body" id="cert-body">finished all three VeriMind modules (AI Foundations, Practical AI Tools, and Ethical AI &amp; Media) and passed the Final Challenge.</p>
+          <div class="cert-badges">
+            <img src="assets/badge-foundations.svg" alt="Neural Navigator badge" width="64" height="64" />
+            <img src="assets/badge-tools.svg" alt="Prompt Crafter badge" width="64" height="64" />
+            <img src="assets/badge-ethics.svg" alt="Ethics Guardian badge" width="64" height="64" />
+          </div>
+          <div class="cert-meta">
+            <div>
+              <span class="cert-meta-value" id="cert-date">Today</span>
+              <span class="cert-meta-label">Date</span>
+            </div>
+            <div>
+              <span class="cert-meta-value" id="cert-rank">AI Architect</span>
+              <span class="cert-meta-label">Rank</span>
+            </div>
+          </div>
+          <p class="cert-disclaimer">
+            VeriMind is a student project made for the TSA Webmaster competition. This certificate shows you finished our course. It is not an official credential from TSA, your school, or any other organization.
+          </p>
+        </article>
+      </section>
+    </main>
+
+    <footer class="container site-footer">
+      <p>VeriMind • 2026-2027 TSA Webmaster entry (grades 9-12)</p>
+      <div class="footer-links">
+        <a href="about.html">About &amp; TSA docs</a>
+        <a href="challenge.html">Certificate</a>
+      </div>
+      <div class="footer-controls">
+        <label class="demo-switch" for="judge-mode-toggle">
+          <input type="checkbox" id="judge-mode-toggle" role="switch" />
+          <span class="switch-track" aria-hidden="true"></span>
+          <span>Judge Demo Mode</span>
+          <span class="switch-state" aria-hidden="true">Off</span>
+        </label>
+        <button type="button" class="btn-text" id="reset-progress">Reset progress</button>
+      </div>
+    </footer>
+  </div>
+</body>
+</html>

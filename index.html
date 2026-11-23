@@ -1,0 +1,187 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>VeriMind | AI Literacy for High School</title>
+  <meta name="description" content="VeriMind teaches high school students how chatbots work, how to prompt them well for school, and how to catch AI hallucinations and deepfakes." />
+  <link rel="stylesheet" href="style.css" />
+  <script src="js/progress.js" defer></script>
+</head>
+<body data-page="index">
+  <a class="skip-link" href="#main">Skip to main content</a>
+  <div class="page">
+    <!-- Floating Dynamic Pill Navbar -->
+    <header class="floating-nav">
+      <a href="index.html" class="brand" aria-label="VeriMind home">
+        <span class="brand-icon" aria-hidden="true"></span>
+        <span class="brand-text">VERIMIND</span>
+      </a>
+
+      <nav class="nav-links" aria-label="Main Navigation">
+        <a href="index.html" class="active" aria-current="page">Dashboard</a>
+        <a href="foundations.html">Foundations</a>
+        <a href="tools.html">Tools</a>
+        <a href="ethics.html">Ethics</a>
+        <a href="challenge.html">Challenge</a>
+      </nav>
+
+      <div class="xp-badge" id="nav-xp">0 / 400 XP</div>
+    </header>
+
+    <!-- Judge tour: filled in and shown by js/progress.js when Judge Demo Mode is on -->
+    <aside class="judge-banner" id="judge-banner" aria-label="Judge tour" hidden></aside>
+
+    <main id="main">
+      <!-- Section 1: Spacious Hero Intro -->
+      <section class="container hero">
+        <span class="eyebrow">AI literacy for grades 9-12</span>
+        <h1>Know when it's AI.</h1>
+        <p class="hero-desc">
+          Learn how chatbots pick their next word, write prompts that get useful answers for schoolwork, and practice telling human work apart from AI hallucinations and deepfakes.
+        </p>
+        <div class="hero-buttons">
+          <a href="foundations.html" class="btn-primary">Start Module 1 →</a>
+          <a href="challenge.html" class="btn-secondary">Take the Final Challenge</a>
+        </div>
+      </section>
+
+      <!-- Section 2: Gamification & Progress Dashboard -->
+      <section class="container section-block" aria-labelledby="progress-title">
+        <div class="section-heading">
+          <h2 id="progress-title">Your progress</h2>
+          <span class="rank-pill" id="user-rank">Rank: AI Novice</span>
+        </div>
+
+        <div class="dashboard-box">
+          <div class="progress-meta">
+            <span>Course completion</span>
+            <span id="xp-text">0% complete (0 / 400 XP)</span>
+          </div>
+          <div class="progress-bar" role="progressbar" aria-labelledby="progress-title" aria-valuemin="0" aria-valuemax="400" aria-valuenow="0" aria-valuetext="0 of 400 XP, 0 percent">
+            <div class="progress-fill" id="xp-fill" style="width: 0%;"></div>
+          </div>
+
+          <div class="grid-3">
+            <div class="badge-card" data-badge-slot="foundations">
+              <div class="badge-circle">
+                <span class="badge-number" aria-hidden="true">01</span>
+                <img class="badge-art" src="assets/badge-foundations.svg" alt="" width="52" height="52" />
+              </div>
+              <h3>Neural Navigator</h3>
+              <p>Unlocks when you finish AI Foundations and the Claim Checker.</p>
+              <span class="badge-status">Locked</span>
+            </div>
+            <div class="badge-card" data-badge-slot="tools">
+              <div class="badge-circle">
+                <span class="badge-number" aria-hidden="true">02</span>
+                <img class="badge-art" src="assets/badge-tools.svg" alt="" width="52" height="52" />
+              </div>
+              <h3>Prompt Crafter</h3>
+              <p>Unlocks when you finish Practical AI Tools and the Citation Lab.</p>
+              <span class="badge-status">Locked</span>
+            </div>
+            <div class="badge-card" data-badge-slot="ethics">
+              <div class="badge-circle">
+                <span class="badge-number" aria-hidden="true">03</span>
+                <img class="badge-art" src="assets/badge-ethics.svg" alt="" width="52" height="52" />
+              </div>
+              <h3>Ethics Guardian</h3>
+              <p>Unlocks when you finish the Deepfake Spotter and the honor-code cases in Ethical AI &amp; Media.</p>
+              <span class="badge-status">Locked</span>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- Section 3: 3 Core Learning Modules -->
+      <section class="container section-block" aria-labelledby="modules-title">
+        <div class="section-heading">
+          <h2 id="modules-title">The three modules</h2>
+        </div>
+
+        <div class="grid-3">
+          <article class="module-card">
+            <div>
+              <span class="module-tag">Module 01 • +100 XP</span>
+              <h3>AI Foundations</h3>
+              <p>
+                See how large language models build answers one token at a time, why their training data leaves blind spots, and why they sound so sure when they're making things up.
+              </p>
+            </div>
+            <a href="foundations.html" class="card-btn">Open Module →</a>
+          </article>
+
+          <article class="module-card featured-card">
+            <div>
+              <span class="module-tag">Module 02 • +100 XP</span>
+              <h3>Practical AI Tools</h3>
+              <p>
+                Write prompts that turn a vague request into a real study guide or a list of project ideas. Then check every citation the AI gives you before it goes in your bibliography.
+              </p>
+            </div>
+            <a href="tools.html" class="card-btn">Open Module →</a>
+          </article>
+
+          <article class="module-card">
+            <div>
+              <span class="module-tag">Module 03 • +100 XP</span>
+              <h3>Ethical AI &amp; Media</h3>
+              <p>
+                Learn where AI help crosses the line under your school's honor code and how bias ends up in algorithms. You'll also practice catching the visual and audio giveaways in deepfakes.
+              </p>
+            </div>
+            <a href="ethics.html" class="card-btn">Open Module →</a>
+          </article>
+        </div>
+      </section>
+
+      <!-- Section 4: "Real or Robot?" Interactive Preview Box -->
+      <section class="container section-block" aria-labelledby="compare-title">
+        <div class="section-heading">
+          <h2 id="compare-title">Real or Robot? Two quick examples</h2>
+        </div>
+
+        <div class="split-2">
+          <div class="compare-box">
+            <span class="compare-label">Sample A • Word choice</span>
+            <div class="compare-body">
+              <p>
+                "In conclusion, the Industrial Revolution was a multifaceted tapestry of innovation that fundamentally reshaped societal paradigms across the globe."
+              </p>
+              <span class="clue-tag">Clue: three AI favorites ("tapestry," "multifaceted," "paradigms") crammed into one sentence.</span>
+            </div>
+          </div>
+
+          <div class="compare-box">
+            <span class="compare-label">Sample B • Citation check</span>
+            <div class="compare-body">
+              <p>
+                "According to Dr. Marcus Vance's 2021 Stanford study on teen sleep cycles, 84% of high schoolers improve test scores after listening to white noise."
+              </p>
+              <span class="clue-tag">Clue: the researcher and the study are made up, and so is the 84%.</span>
+            </div>
+          </div>
+        </div>
+      </section>
+    </main>
+
+    <footer class="container site-footer">
+      <p>VeriMind • 2026-2027 TSA Webmaster entry (grades 9-12)</p>
+      <div class="footer-links">
+        <a href="about.html">About &amp; TSA docs</a>
+        <a href="challenge.html">Certificate</a>
+      </div>
+      <div class="footer-controls">
+        <label class="demo-switch" for="judge-mode-toggle">
+          <input type="checkbox" id="judge-mode-toggle" role="switch" />
+          <span class="switch-track" aria-hidden="true"></span>
+          <span>Judge Demo Mode</span>
+          <span class="switch-state" aria-hidden="true">Off</span>
+        </label>
+        <button type="button" class="btn-text" id="reset-progress">Reset progress</button>
+      </div>
+    </footer>
+  </div>
+</body>
+</html>

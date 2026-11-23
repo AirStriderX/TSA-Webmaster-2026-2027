@@ -1,0 +1,243 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>AI Foundations | VeriMind</title>
+  <meta name="description" content="Module 1: how large language models predict tokens, why they hallucinate, and a Real or Robot? claim-checking game." />
+  <link rel="stylesheet" href="style.css" />
+  <script src="js/progress.js" defer></script>
+  <script src="js/interactives.js" defer></script>
+</head>
+<body data-page="foundations">
+  <a class="skip-link" href="#main">Skip to main content</a>
+  <div class="page">
+    <header class="floating-nav">
+      <a href="index.html" class="brand" aria-label="VeriMind home">
+        <span class="brand-icon" aria-hidden="true"></span>
+        <span class="brand-text">VERIMIND</span>
+      </a>
+
+      <nav class="nav-links" aria-label="Main Navigation">
+        <a href="index.html">Dashboard</a>
+        <a href="foundations.html" class="active" aria-current="page">Foundations</a>
+        <a href="tools.html">Tools</a>
+        <a href="ethics.html">Ethics</a>
+        <a href="challenge.html">Challenge</a>
+      </nav>
+
+      <div class="xp-badge" id="nav-xp">0 / 400 XP</div>
+    </header>
+
+    <aside class="judge-banner" id="judge-banner" aria-label="Judge tour" hidden></aside>
+
+    <main id="main">
+      <section class="container hero hero-module">
+        <span class="eyebrow">Module 1 of 3 • +100 XP</span>
+        <h1>AI Foundations</h1>
+        <p class="hero-desc">
+          A chatbot answering your question usually isn't looking anything up. It's predicting the next word, then the next one, really fast. Once you see how that works, it makes sense that chatbots sometimes invent things and sound totally sure about it.
+        </p>
+        <div class="hero-buttons">
+          <a href="#how-title" class="btn-primary">Start the lesson</a>
+          <a href="#claims-title" class="btn-secondary">Skip to Real or Robot?</a>
+        </div>
+      </section>
+
+      <!-- Lesson: tokens and temperature -->
+      <section class="container section-block" aria-labelledby="how-title">
+        <div class="section-heading">
+          <h2 id="how-title">How a chatbot writes</h2>
+        </div>
+
+        <div class="lesson-grid">
+          <div class="prose">
+            <p>
+              ChatGPT, Claude, Gemini, and Copilot all run on large language models, or LLMs. An LLM is trained on a massive amount of text, including websites, books, and code. From all that reading, it learns which words tend to follow which.
+            </p>
+            <p>
+              When you send it a question, it doesn't pull up a stored answer. It reads the whole conversation so far, gives every possible next piece of text a score, picks one, adds it to the end, and repeats. A paragraph-long answer is hundreds of those tiny predictions in a row.
+            </p>
+
+            <h3>Tokens are the pieces</h3>
+            <p>
+              Those pieces are called tokens. A token can be a whole word, a chunk of a word, a word with the space in front of it, or a punctuation mark. Common words usually get one token each, and longer or rarer words get split up. OpenAI's rule of thumb is that one token is about four characters of English, so 100 tokens comes out to roughly 75 words.
+            </p>
+            <figure>
+              <div class="token-strip">
+                <span class="token">Un</span><span class="token">believ</span><span class="token">ably</span><span class="token">,</span><span class="token"> my</span><span class="token"> essay</span><span class="token"> is</span><span class="token"> due</span><span class="token"> tomorrow</span><span class="token">.</span>
+              </div>
+              <figcaption>One way a tokenizer could split this sentence into 10 tokens. Every model splits text a little differently.</figcaption>
+            </figure>
+
+            <h3>Temperature: playing it safe or taking chances</h3>
+            <p>
+              Most AI tools have a setting called temperature. At a low temperature, the model almost always goes with the top-scoring token, so the answers are predictable. Turn it up and lower-scoring tokens get a real shot, which makes the writing more creative and also more likely to drift off track. You can drag the slider yourself in the next section.
+            </p>
+          </div>
+
+          <aside class="side-note" aria-labelledby="tldr-title">
+            <span class="note-label" id="tldr-title">TL;DR</span>
+            <ul>
+              <li>An LLM writes by predicting one token at a time.</li>
+              <li>It's working from patterns in its training text, and nothing in that process checks facts.</li>
+              <li>Temperature controls how often it gambles on a less likely token.</li>
+            </ul>
+          </aside>
+        </div>
+      </section>
+
+      <!-- Interactive: next-token probability visualizer -->
+      <section class="container section-block" aria-labelledby="visualizer-title">
+        <div class="section-heading">
+          <h2 id="visualizer-title">Try it: the next-word visualizer</h2>
+        </div>
+        <p class="section-intro">
+          Pick a sentence starter. Each bar shows how likely that word is to come next. We made up these numbers for the demo, but they behave the way a real model's do. A real model is choosing from tens of thousands of tokens at every step, not five or six.
+        </p>
+
+        <div class="lab" id="token-visualizer">
+          <div class="lab-head">
+            <span>Next-word visualizer</span>
+            <span>Demo numbers</span>
+          </div>
+          <div class="lab-body">
+            <div>
+              <span class="field-label" id="tv-prompts-label">Sentence starter</span>
+              <div class="seg" id="tv-prompts" role="group" aria-labelledby="tv-prompts-label"></div>
+            </div>
+
+            <p class="tv-sentence" id="tv-sentence"></p>
+
+            <div>
+              <label class="field-label" for="tv-temp">Temperature <output class="temp-value" id="tv-temp-out" for="tv-temp">1.0</output></label>
+              <input class="range" type="range" id="tv-temp" min="0.2" max="2" step="0.1" value="1" aria-describedby="tv-temp-help" />
+              <p class="field-help" id="tv-temp-help">Slide left and the top word takes over. Slide right and the long shots start winning.</p>
+            </div>
+
+            <ul class="prob-list" id="tv-bars" aria-label="Chance of each next word"></ul>
+
+            <div class="lab-actions">
+              <button type="button" class="btn-primary" id="tv-generate">Pick the next word</button>
+              <button type="button" class="btn-secondary" id="tv-run20">Run it 20 times</button>
+              <button type="button" class="btn-text" id="tv-clear">Clear tally</button>
+            </div>
+            <p class="status-line" id="tv-summary" aria-live="polite"></p>
+            <p class="lab-note" id="tv-note"></p>
+          </div>
+        </div>
+      </section>
+
+      <!-- Lesson: hallucinations -->
+      <section class="container section-block" aria-labelledby="hallucinations-title">
+        <div class="section-heading">
+          <h2 id="hallucinations-title">Why chatbots make things up</h2>
+        </div>
+
+        <div class="lesson-grid">
+          <div class="prose">
+            <p>
+              When a chatbot states something false like it's a fact, that's called a hallucination. The chatbot has no idea what's true, so it isn't lying. It's doing what it always does, which is writing text that sounds likely. Usually likely and true line up. When they don't, the chatbot sounds exactly as confident as before.
+            </p>
+            <p>
+              In 2023, two New York lawyers turned in a court filing that cited six cases ChatGPT had made up. The judge in <i>Mata v. Avianca</i> fined the lawyers and their firm $5,000.
+            </p>
+
+            <h3>Where hallucinations come from</h3>
+            <ul>
+              <li>The topic barely showed up in the training data, like a small local event or a brand-new study, so the model fills the gaps with stuff that sounds right.</li>
+              <li>Training stopped at a certain date. The model won't know about anything newer unless it's hooked up to search, and even then it can mix things up.</li>
+              <li>It's trained to be helpful, so it tends to give you some answer instead of saying "I don't know."</li>
+              <li>It glues a real fact to the wrong name, date, or number, because each piece sounds fine by itself. One of the claims in the game below does exactly this.</li>
+            </ul>
+
+            <h3>How to catch one</h3>
+            <p>
+              Get suspicious when you see an exact statistic with no source, a quote you can't find anywhere else, or a citation that looks a little too perfect. To check, search the exact title or quote, find a second source that didn't come from AI, and if the chatbot says where it got something, go read that source yourself.
+            </p>
+          </div>
+
+          <aside class="side-note" aria-labelledby="blind-title">
+            <span class="note-label" id="blind-title">Blind spots</span>
+            <p>
+              Most of the text these models learn from is in English and comes from the internet. They know a lot about things the internet talks about constantly and much less about a small town, a less common language, or a niche hobby. If your question is about one of those, check the answer twice as hard.
+            </p>
+          </aside>
+        </div>
+      </section>
+
+      <!-- Game: Real or Robot? Claim Checker -->
+      <section class="container section-block" aria-labelledby="claims-title">
+        <div class="section-heading">
+          <h2 id="claims-title">Real or Robot? Claim Checker</h2>
+        </div>
+        <p class="section-intro">
+          Four claims, one at a time. Pick Real if it's accurate and something a person could have written. Pick Robot if it has an AI giveaway, like a made-up fact or chatbot filler. After each answer we'll mark the clues. Get 3 of 4 right to earn the Neural Navigator badge.
+        </p>
+
+        <div class="lab" id="claim-checker">
+          <div class="lab-head">
+            <span id="cc-round">Round 1 of 4</span>
+            <span id="cc-score">Score: 0</span>
+          </div>
+          <div class="lab-body" id="cc-play">
+            <ol class="round-meter" id="cc-meter" aria-hidden="true">
+              <li></li><li></li><li></li><li></li>
+            </ol>
+            <blockquote class="claim-card" id="cc-claim"></blockquote>
+            <div class="choice-row" role="group" aria-label="Your verdict">
+              <button type="button" class="choice-btn" data-answer="real">Real</button>
+              <button type="button" class="choice-btn" data-answer="robot">Robot</button>
+            </div>
+            <div class="feedback" id="cc-feedback" tabindex="-1" hidden></div>
+            <div class="lab-actions" id="cc-next-wrap" hidden>
+              <button type="button" class="btn-primary" id="cc-next">Next claim</button>
+            </div>
+          </div>
+          <div class="lab-body" id="cc-result" tabindex="-1" hidden></div>
+        </div>
+      </section>
+
+      <!-- Module wrap-up -->
+      <section class="container section-block" aria-labelledby="badge-title">
+        <div class="section-heading">
+          <h2 id="badge-title">Your Module 1 badge</h2>
+        </div>
+        <div class="module-finish" data-badge-flag="foundations">
+          <div class="badge-card" data-badge-slot="foundations">
+            <div class="badge-circle">
+              <span class="badge-number" aria-hidden="true">01</span>
+              <img class="badge-art" src="assets/badge-foundations.svg" alt="" width="52" height="52" />
+            </div>
+            <h3>Neural Navigator</h3>
+            <p>Worth 100 XP.</p>
+            <span class="badge-status">Locked</span>
+          </div>
+          <div class="finish-copy">
+            <p class="when-locked">Get at least 3 of 4 right in Real or Robot? to earn this badge.</p>
+            <p class="when-earned">Badge earned. You know how chatbots write and why they slip up. Next you'll learn to get useful answers out of them for school.</p>
+            <a class="btn-primary" href="tools.html">Next: Practical AI Tools</a>
+          </div>
+        </div>
+      </section>
+    </main>
+
+    <footer class="container site-footer">
+      <p>VeriMind • 2026-2027 TSA Webmaster entry (grades 9-12)</p>
+      <div class="footer-links">
+        <a href="about.html">About &amp; TSA docs</a>
+        <a href="challenge.html">Certificate</a>
+      </div>
+      <div class="footer-controls">
+        <label class="demo-switch" for="judge-mode-toggle">
+          <input type="checkbox" id="judge-mode-toggle" role="switch" />
+          <span class="switch-track" aria-hidden="true"></span>
+          <span>Judge Demo Mode</span>
+          <span class="switch-state" aria-hidden="true">Off</span>
+        </label>
+        <button type="button" class="btn-text" id="reset-progress">Reset progress</button>
+      </div>
+    </footer>
+  </div>
+</body>
+</html>

@@ -1,0 +1,242 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Practical AI Tools | VeriMind</title>
+  <meta name="description" content="Module 2: the R-C-C prompt method, a weak vs. engineered prompt lab, a prompt builder, and a challenge to spot a hallucinated citation." />
+  <link rel="stylesheet" href="style.css" />
+  <script src="js/progress.js" defer></script>
+  <script src="js/interactives.js" defer></script>
+</head>
+<body data-page="tools">
+  <a class="skip-link" href="#main">Skip to main content</a>
+  <div class="page">
+    <header class="floating-nav">
+      <a href="index.html" class="brand" aria-label="VeriMind home">
+        <span class="brand-icon" aria-hidden="true"></span>
+        <span class="brand-text">VERIMIND</span>
+      </a>
+
+      <nav class="nav-links" aria-label="Main Navigation">
+        <a href="index.html">Dashboard</a>
+        <a href="foundations.html">Foundations</a>
+        <a href="tools.html" class="active" aria-current="page">Tools</a>
+        <a href="ethics.html">Ethics</a>
+        <a href="challenge.html">Challenge</a>
+      </nav>
+
+      <div class="xp-badge" id="nav-xp">0 / 400 XP</div>
+    </header>
+
+    <aside class="judge-banner" id="judge-banner" aria-label="Judge tour" hidden></aside>
+
+    <main id="main">
+      <section class="container hero hero-module">
+        <span class="eyebrow">Module 2 of 3 • +100 XP</span>
+        <h1>Practical AI Tools</h1>
+        <p class="hero-desc">
+          A vague prompt gets you a vague answer. This module shows how to write prompts that get you something you can use for school, and how to check the sources a chatbot hands you before they end up in your bibliography.
+        </p>
+        <div class="hero-buttons">
+          <a href="#rcc-title" class="btn-primary">Learn R-C-C</a>
+          <a href="#citation-title" class="btn-secondary">Skip to the Citation Lab</a>
+        </div>
+      </section>
+
+      <!-- Lesson: R-C-C -->
+      <section class="container section-block" aria-labelledby="rcc-title">
+        <div class="section-heading">
+          <h2 id="rcc-title">R-C-C: Role, Context, Constraints</h2>
+        </div>
+        <p class="section-intro">
+          Most weak prompts are one line long. R-C-C is a three-part checklist for fixing that. You won't need all three parts every time, but when an answer comes back generic, one of them is usually missing.
+        </p>
+
+        <ol class="rcc-steps">
+          <li class="rcc-step">
+            <span class="rcc-letter" aria-hidden="true">R</span>
+            <h3>Role</h3>
+            <p>Tell the AI who to be. A tutor explains things differently than an editor does, and an editor works differently than someone writing quiz questions.</p>
+            <p class="rcc-example rcc-role">"Act as a chemistry tutor for a 10th grader."</p>
+          </li>
+          <li class="rcc-step">
+            <span class="rcc-letter" aria-hidden="true">C</span>
+            <h3>Context</h3>
+            <p>Explain what's going on: the class, the assignment, what you already understand, and where you get stuck. The AI only knows what you tell it.</p>
+            <p class="rcc-example rcc-context">"I have a stoichiometry test Friday. Mole ratios make sense to me, but I keep messing up limiting reactants."</p>
+          </li>
+          <li class="rcc-step">
+            <span class="rcc-letter" aria-hidden="true">C</span>
+            <h3>Constraints</h3>
+            <p>Set the rules for the answer, like format, length, difficulty, and what it shouldn't do. This is also where you make sure the work stays yours.</p>
+            <p class="rcc-example rcc-constraints">"Give me 5 practice problems, easiest first. Put the answers at the very end so I can try them first."</p>
+          </li>
+        </ol>
+      </section>
+
+      <!-- Interactive: weak vs. engineered prompt lab -->
+      <section class="container section-block" aria-labelledby="lab-title">
+        <div class="section-heading">
+          <h2 id="lab-title">Weak vs. engineered prompt lab</h2>
+        </div>
+        <p class="section-intro">
+          Pick a school task, then flip between the weak prompt and the engineered one. The responses are examples, not live AI output. They show the kind of answer each prompt usually gets.
+        </p>
+
+        <div class="lab" id="prompt-lab">
+          <div class="lab-head">
+            <span>Prompt lab</span>
+            <span id="pl-mode-tag">Weak prompt</span>
+          </div>
+          <div class="lab-body">
+            <div>
+              <span class="field-label" id="pl-tasks-label">School task</span>
+              <div class="seg" id="pl-tasks" role="group" aria-labelledby="pl-tasks-label"></div>
+            </div>
+            <div>
+              <span class="field-label" id="pl-modes-label">Prompt version</span>
+              <div class="seg seg-mono" id="pl-modes" role="group" aria-labelledby="pl-modes-label">
+                <button type="button" class="seg-btn" data-mode="weak" aria-pressed="true">Weak</button>
+                <button type="button" class="seg-btn" data-mode="strong" aria-pressed="false">Engineered</button>
+              </div>
+            </div>
+            <div class="lab-split">
+              <div>
+                <span class="field-label" id="pl-prompt-label">The prompt</span>
+                <div class="prompt-box" id="pl-prompt" aria-labelledby="pl-prompt-label"></div>
+              </div>
+              <div>
+                <span class="field-label" id="pl-response-label">Example response</span>
+                <div class="response-box" id="pl-response" aria-labelledby="pl-response-label"></div>
+              </div>
+            </div>
+            <p class="lab-note" id="pl-note"></p>
+          </div>
+        </div>
+      </section>
+
+      <!-- Interactive: prompt builder -->
+      <section class="container section-block" aria-labelledby="builder-title">
+        <div class="section-heading">
+          <h2 id="builder-title">Build your own prompt</h2>
+        </div>
+        <p class="section-intro">
+          Fill in each part and the full prompt builds itself next to it. Then paste it into whatever chatbot your school allows.
+        </p>
+
+        <div class="lab" id="prompt-builder">
+          <div class="lab-head">
+            <span>Prompt builder</span>
+            <span>R-C-C</span>
+          </div>
+          <div class="lab-body builder">
+            <div>
+              <div class="field">
+                <label class="field-label" for="pb-role">Role</label>
+                <textarea class="textarea" id="pb-role" rows="2" placeholder="Act as a Spanish teacher who..."></textarea>
+              </div>
+              <div class="field">
+                <label class="field-label" for="pb-context">Context</label>
+                <textarea class="textarea" id="pb-context" rows="3" placeholder="I have a quiz on preterite vs. imperfect on Friday, and I always..."></textarea>
+              </div>
+              <div class="field">
+                <label class="field-label" for="pb-constraints">Constraints</label>
+                <textarea class="textarea" id="pb-constraints" rows="3" placeholder="Give me 8 practice sentences with the answers at the end..."></textarea>
+              </div>
+            </div>
+            <div class="builder-side">
+              <span class="field-label" id="pb-output-label">Your prompt</span>
+              <ul class="rcc-meter" id="pb-meter" aria-label="Parts filled in">
+                <li data-part="role">Role</li>
+                <li data-part="context">Context</li>
+                <li data-part="constraints">Constraints</li>
+              </ul>
+              <div class="prompt-box builder-output is-empty" id="pb-output" aria-labelledby="pb-output-label">Start typing on the left and your prompt shows up here.</div>
+              <div class="lab-actions">
+                <button type="button" class="btn-primary" id="pb-copy">Copy prompt</button>
+                <button type="button" class="btn-text" id="pb-clear">Clear</button>
+              </div>
+              <p class="status-line" id="pb-status" role="status"></p>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- Challenge: spot the hallucinated citation -->
+      <section class="container section-block" aria-labelledby="citation-title">
+        <div class="section-heading">
+          <h2 id="citation-title">Spot the hallucinated citation</h2>
+        </div>
+        <p class="section-intro">
+          You asked a chatbot for sources on bias in AI for a research paper, and it gave you these three. Two are real papers. One doesn't exist. Find the fake to earn the Prompt Crafter badge.
+        </p>
+
+        <div class="lesson-grid">
+          <div class="lab" id="citation-challenge">
+            <div class="lab-head">
+              <span>Citation Lab</span>
+              <span id="ct-status">Pick the fake</span>
+            </div>
+            <div class="lab-body">
+              <p class="prompt-box">"Give me three peer-reviewed sources about bias in AI for my research paper."</p>
+              <ul class="option-list" id="ct-options" aria-label="The three citations"></ul>
+              <div class="feedback" id="ct-feedback" tabindex="-1" hidden></div>
+            </div>
+          </div>
+
+          <aside class="side-note" aria-labelledby="check-title">
+            <span class="note-label" id="check-title">How to check any citation</span>
+            <ol>
+              <li>Search the exact title, in quotes, on Google Scholar or your school library's database.</li>
+              <li>Make sure the journal is real and has its own website.</li>
+              <li>Open the DOI or link and confirm it goes to that exact paper.</li>
+              <li>Skim the paper to check it says what the chatbot claimed. Real papers get misquoted too.</li>
+            </ol>
+          </aside>
+        </div>
+      </section>
+
+      <!-- Module wrap-up -->
+      <section class="container section-block" aria-labelledby="badge-title">
+        <div class="section-heading">
+          <h2 id="badge-title">Your Module 2 badge</h2>
+        </div>
+        <div class="module-finish" data-badge-flag="tools">
+          <div class="badge-card" data-badge-slot="tools">
+            <div class="badge-circle">
+              <span class="badge-number" aria-hidden="true">02</span>
+              <img class="badge-art" src="assets/badge-tools.svg" alt="" width="52" height="52" />
+            </div>
+            <h3>Prompt Crafter</h3>
+            <p>Worth 100 XP.</p>
+            <span class="badge-status">Locked</span>
+          </div>
+          <div class="finish-copy">
+            <p class="when-locked">Find the fake citation in the Citation Lab to earn this badge.</p>
+            <p class="when-earned">Badge earned. You can write a prompt that gets real help, and you can catch a fake source before your teacher does. The last module covers the ethics side.</p>
+            <a class="btn-primary" href="ethics.html">Next: Ethical AI &amp; Media</a>
+          </div>
+        </div>
+      </section>
+    </main>
+
+    <footer class="container site-footer">
+      <p>VeriMind • 2026-2027 TSA Webmaster entry (grades 9-12)</p>
+      <div class="footer-links">
+        <a href="about.html">About &amp; TSA docs</a>
+        <a href="challenge.html">Certificate</a>
+      </div>
+      <div class="footer-controls">
+        <label class="demo-switch" for="judge-mode-toggle">
+          <input type="checkbox" id="judge-mode-toggle" role="switch" />
+          <span class="switch-track" aria-hidden="true"></span>
+          <span>Judge Demo Mode</span>
+          <span class="switch-state" aria-hidden="true">Off</span>
+        </label>
+        <button type="button" class="btn-text" id="reset-progress">Reset progress</button>
+      </div>
+    </footer>
+  </div>
+</body>
+</html>

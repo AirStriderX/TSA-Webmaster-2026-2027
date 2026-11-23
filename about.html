@@ -1,0 +1,245 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>About &amp; TSA Docs | VeriMind</title>
+  <meta name="description" content="VeriMind's TSA reference page: required documents, copyright and media statement, tech stack disclosure, and full bibliography." />
+  <link rel="stylesheet" href="style.css" />
+  <script src="js/progress.js" defer></script>
+</head>
+<body data-page="about">
+  <a class="skip-link" href="#main">Skip to main content</a>
+  <div class="page">
+    <header class="floating-nav">
+      <a href="index.html" class="brand" aria-label="VeriMind home">
+        <span class="brand-icon" aria-hidden="true"></span>
+        <span class="brand-text">VERIMIND</span>
+      </a>
+
+      <nav class="nav-links" aria-label="Main Navigation">
+        <a href="index.html">Dashboard</a>
+        <a href="foundations.html">Foundations</a>
+        <a href="tools.html">Tools</a>
+        <a href="ethics.html">Ethics</a>
+        <a href="challenge.html">Challenge</a>
+      </nav>
+
+      <div class="xp-badge" id="nav-xp">0 / 400 XP</div>
+    </header>
+
+    <aside class="judge-banner" id="judge-banner" aria-label="Judge tour" hidden></aside>
+
+    <main id="main">
+      <section class="container hero hero-module">
+        <span class="eyebrow">TSA reference page</span>
+        <h1>About VeriMind</h1>
+        <p class="hero-desc">
+          VeriMind is a free course that teaches high schoolers how AI chatbots work, how to use them well for school, and how to catch them when they're wrong or faking it. This page has what TSA asks for: our documents, copyright statement, tech stack, and sources.
+        </p>
+        <div class="hero-buttons">
+          <a href="#docs-title" class="btn-primary">Get the TSA documents</a>
+          <a href="#sources-title" class="btn-secondary">Jump to sources</a>
+        </div>
+      </section>
+
+      <!-- Required documents -->
+      <section class="container section-block" aria-labelledby="docs-title">
+        <div class="section-heading">
+          <h2 id="docs-title">TSA documents</h2>
+        </div>
+
+        <div class="doc-grid">
+          <article class="doc-card">
+            <span class="doc-icon" aria-hidden="true">PDF</span>
+            <h3>Copyright Checklist</h3>
+            <span class="doc-meta">PDF • 1 page</span>
+            <p>The completed TSA copyright checklist covering every image, sample, and font on this site.</p>
+            <a class="card-btn" href="docs/TSA-Copyright-Checklist.pdf" download>Download PDF</a>
+          </article>
+          <article class="doc-card">
+            <span class="doc-icon" aria-hidden="true">PDF</span>
+            <h3>Resources &amp; AI Reflection</h3>
+            <span class="doc-meta">PDF • up to 4 pages</span>
+            <p>The tools and resources we used, including AI tools, and what we learned from using them.</p>
+            <a class="card-btn" href="docs/TSA-Resources-AI-Reflection.pdf" download>Download PDF</a>
+          </article>
+          <article class="doc-card">
+            <span class="doc-icon" aria-hidden="true">PDF</span>
+            <h3>Work Log</h3>
+            <span class="doc-meta">PDF</span>
+            <p>Who worked on what and when, from the first sketch to the final build.</p>
+            <a class="card-btn" href="docs/TSA-Work-Log.pdf" download>Download PDF</a>
+          </article>
+          <article class="doc-card">
+            <span class="doc-icon" aria-hidden="true">PDF</span>
+            <h3>Plan of Work</h3>
+            <span class="doc-meta">PDF</span>
+            <p>Our timeline, task list, and how we split up the project.</p>
+            <a class="card-btn" href="docs/TSA-Plan-of-Work.pdf" download>Download PDF</a>
+          </article>
+        </div>
+      </section>
+
+      <!-- Copyright and media permissions -->
+      <section class="container section-block" aria-labelledby="copyright-title">
+        <div class="section-heading">
+          <h2 id="copyright-title">Copyright and media permissions</h2>
+        </div>
+
+        <div class="statement">
+          <p>
+            Everything you see on VeriMind was created for this project. We didn't use copyrighted images, audio, video, or code from anyone else, so no outside permissions were needed.
+          </p>
+          <ul>
+            <li>The three badges (<code>assets/badge-foundations.svg</code>, <code>assets/badge-tools.svg</code>, and <code>assets/badge-ethics.svg</code>) are original SVG files drawn in code for this site.</li>
+            <li>The fake post on the Ethics page is an original SVG illustration. No real person, photo, or AI image generator was involved.</li>
+            <li>The voicemail is a script written for this site. The play button reads it aloud with your browser's built-in text-to-speech voice, so there's no audio file.</li>
+            <li>Every practice sample was written for this site. The fake ones are fake on purpose: the made-up Stanford study on the dashboard, the Robot claims in Real or Robot?, the hallucinated citation, and the example chatbot responses in the prompt lab. The site labels each fake once you answer. The two real citations in the Citation Lab point to published papers listed in our sources.</li>
+            <li>Fonts: Newsreader and IBM Plex Mono, served by Google Fonts under the SIL Open Font License 1.1.</li>
+          </ul>
+          <p>
+            Facts in our lessons and games come from the sources below. Our Resources &amp; AI Reflection document explains how we used AI tools while building the site.
+          </p>
+        </div>
+      </section>
+
+      <!-- Tech stack disclosure -->
+      <section class="container section-block" aria-labelledby="stack-title">
+        <div class="section-heading">
+          <h2 id="stack-title">How we built it</h2>
+        </div>
+        <p class="section-intro">
+          VeriMind is coded from scratch in HTML5, CSS3, and vanilla JavaScript. We used no CMS, no website builder, no templates, and no frameworks or libraries.
+        </p>
+
+        <ul class="stack-list">
+          <li>
+            <span class="stack-name">HTML5</span>
+            <span>Six pages of semantic markup (header, nav, main, section, footer) with ARIA labels, a skip link, and live regions so screen readers announce game feedback.</span>
+          </li>
+          <li>
+            <span class="stack-name">CSS3</span>
+            <span>One stylesheet, <code>style.css</code>, using custom properties for colors, Grid and Flexbox for layout, and separate rules for phones, reduced motion, high-contrast mode, and printing.</span>
+          </li>
+          <li>
+            <span class="stack-name">Vanilla JavaScript</span>
+            <span>Three scripts. <code>js/progress.js</code> saves XP and badges in localStorage, <code>js/interactives.js</code> runs the labs and games, and <code>js/quiz.js</code> runs the Final Challenge and certificate. The voicemail demo uses the Web Speech API.</span>
+          </li>
+          <li>
+            <span class="stack-name">Tools</span>
+            <span>Visual Studio Code for editing, Git and GitHub for version control, and Chrome and Edge for testing.</span>
+          </li>
+          <li>
+            <span class="stack-name">Outside resources</span>
+            <span>Google Fonts only. Your progress stays in your own browser. Nothing gets sent to a server, and Reset progress in the footer wipes it.</span>
+          </li>
+        </ul>
+      </section>
+
+      <!-- Bibliography -->
+      <section class="container section-block" aria-labelledby="sources-title">
+        <div class="section-heading">
+          <h2 id="sources-title">Sources</h2>
+        </div>
+        <p class="section-intro">
+          These are the sources behind the facts in our lessons, games, and examples. Citations follow APA 7th edition.
+        </p>
+
+        <div class="biblio-group">
+          <h3>How language models work</h3>
+          <ul class="biblio">
+            <li>Bender, E. M., Gebru, T., McMillan-Major, A., &amp; Shmitchell, S. (2021). On the dangers of stochastic parrots: Can language models be too big? In <i>Proceedings of the 2021 ACM Conference on Fairness, Accountability, and Transparency</i> (pp. 610-623). <a href="https://doi.org/10.1145/3442188.3445922">https://doi.org/10.1145/3442188.3445922</a></li>
+            <li>OpenAI. (n.d.). <i>What are tokens and how to count them?</i> OpenAI Help Center. <a href="https://help.openai.com/en/articles/4936856-what-are-tokens-and-how-to-count-them">https://help.openai.com/en/articles/4936856-what-are-tokens-and-how-to-count-them</a></li>
+            <li>Vaswani, A., Shazeer, N., Parmar, N., Uszkoreit, J., Jones, L., Gomez, A. N., Kaiser, Ł., &amp; Polosukhin, I. (2017). Attention is all you need. In <i>Advances in Neural Information Processing Systems 30</i>. <a href="https://arxiv.org/abs/1706.03762">https://arxiv.org/abs/1706.03762</a></li>
+            <li>Wolfram, S. (2023, February 14). <i>What is ChatGPT doing ... and why does it work?</i> Stephen Wolfram Writings. <a href="https://writings.stephenwolfram.com/2023/02/what-is-chatgpt-doing-and-why-does-it-work/">https://writings.stephenwolfram.com/2023/02/what-is-chatgpt-doing-and-why-does-it-work/</a></li>
+          </ul>
+        </div>
+
+        <div class="biblio-group">
+          <h3>Hallucinations and fake citations</h3>
+          <ul class="biblio">
+            <li>Ji, Z., Lee, N., Frieske, R., Yu, T., Su, D., Xu, Y., Ishii, E., Bang, Y. J., Madotto, A., &amp; Fung, P. (2023). Survey of hallucination in natural language generation. <i>ACM Computing Surveys, 55</i>(12), Article 248. <a href="https://doi.org/10.1145/3571730">https://doi.org/10.1145/3571730</a></li>
+            <li><i>Mata v. Avianca, Inc.</i>, No. 22-cv-1461 (PKC) (S.D.N.Y. June 22, 2023) (opinion and order on sanctions).</li>
+            <li>Walters, W. H., &amp; Wilder, E. I. (2023). Fabrication and errors in the bibliographic citations generated by ChatGPT. <i>Scientific Reports, 13</i>, Article 14045. <a href="https://doi.org/10.1038/s41598-023-41032-5">https://doi.org/10.1038/s41598-023-41032-5</a></li>
+          </ul>
+        </div>
+
+        <div class="biblio-group">
+          <h3>Prompting</h3>
+          <ul class="biblio">
+            <li>Anthropic. (n.d.). <i>Prompt engineering overview</i>. Claude Docs. <a href="https://docs.anthropic.com/en/docs/build-with-claude/prompt-engineering/overview">https://docs.anthropic.com/en/docs/build-with-claude/prompt-engineering/overview</a></li>
+            <li>OpenAI. (n.d.). <i>Prompt engineering</i>. OpenAI Platform documentation. <a href="https://platform.openai.com/docs/guides/prompt-engineering">https://platform.openai.com/docs/guides/prompt-engineering</a></li>
+          </ul>
+        </div>
+
+        <div class="biblio-group">
+          <h3>Bias, ethics, and academic integrity</h3>
+          <ul class="biblio">
+            <li>Buolamwini, J., &amp; Gebru, T. (2018). Gender shades: Intersectional accuracy disparities in commercial gender classification. <i>Proceedings of Machine Learning Research, 81</i>, 77-91. <a href="https://proceedings.mlr.press/v81/buolamwini18a.html">https://proceedings.mlr.press/v81/buolamwini18a.html</a></li>
+            <li>International Center for Academic Integrity. (2021). <i>The fundamental values of academic integrity</i> (3rd ed.). <a href="https://academicintegrity.org/">https://academicintegrity.org/</a></li>
+            <li>Liang, W., Yuksekgonul, M., Mao, Y., Wu, E., &amp; Zou, J. (2023). GPT detectors are biased against non-native English writers. <i>Patterns, 4</i>(7), Article 100779. <a href="https://doi.org/10.1016/j.patter.2023.100779">https://doi.org/10.1016/j.patter.2023.100779</a></li>
+            <li>McAdoo, T. (2023, April 7). How to cite ChatGPT. <i>APA Style Blog</i>. <a href="https://apastyle.apa.org/blog/how-to-cite-chatgpt">https://apastyle.apa.org/blog/how-to-cite-chatgpt</a></li>
+            <li>MLA Style Center. (2023, March 17). <i>How do I cite generative AI in MLA style?</i> <a href="https://style.mla.org/citing-generative-ai/">https://style.mla.org/citing-generative-ai/</a></li>
+            <li>National Institute of Standards and Technology. (2023). <i>Artificial intelligence risk management framework (AI RMF 1.0)</i> (NIST AI 100-1). <a href="https://doi.org/10.6028/NIST.AI.100-1">https://doi.org/10.6028/NIST.AI.100-1</a></li>
+            <li>Obermeyer, Z., Powers, B., Vogeli, C., &amp; Mullainathan, S. (2019). Dissecting racial bias in an algorithm used to manage the health of populations. <i>Science, 366</i>(6464), 447-453. <a href="https://doi.org/10.1126/science.aax2342">https://doi.org/10.1126/science.aax2342</a></li>
+          </ul>
+        </div>
+
+        <div class="biblio-group">
+          <h3>Deepfakes and voice-clone scams</h3>
+          <ul class="biblio">
+            <li>Coalition for Content Provenance and Authenticity. (n.d.). <i>C2PA</i>. <a href="https://c2pa.org/">https://c2pa.org/</a></li>
+            <li>Federal Trade Commission. (n.d.). <i>Avoiding and reporting gift card scams</i>. Consumer Advice. <a href="https://consumer.ftc.gov/articles/avoiding-and-reporting-gift-card-scams">https://consumer.ftc.gov/articles/avoiding-and-reporting-gift-card-scams</a></li>
+            <li>Federal Trade Commission. (2023, March 20). <i>Scammers use AI to enhance their family emergency schemes</i>. Consumer Advice. <a href="https://consumer.ftc.gov/consumer-alerts/2023/03/scammers-use-ai-enhance-their-family-emergency-schemes">https://consumer.ftc.gov/consumer-alerts/2023/03/scammers-use-ai-enhance-their-family-emergency-schemes</a></li>
+            <li>MIT Media Lab. (n.d.). <i>Detect Fakes</i>. <a href="https://detectfakes.media.mit.edu/">https://detectfakes.media.mit.edu/</a></li>
+          </ul>
+        </div>
+
+        <div class="biblio-group">
+          <h3>Facts used in our games and examples</h3>
+          <ul class="biblio">
+            <li>Clark, M. A., Douglas, M., &amp; Choi, J. (2018). <i>Biology 2e</i>. OpenStax. <a href="https://openstax.org/details/books/biology-2e">https://openstax.org/details/books/biology-2e</a></li>
+            <li>Computer History Museum. (n.d.). <i>Internet history of 1960s</i>. <a href="https://www.computerhistory.org/internethistory/1960s/">https://www.computerhistory.org/internethistory/1960s/</a></li>
+            <li>Cornell University ILR School. (n.d.). <i>Remembering the 1911 Triangle Factory fire</i>. <a href="https://trianglefire.ilr.cornell.edu/">https://trianglefire.ilr.cornell.edu/</a></li>
+            <li>Encyclopaedia Britannica. (n.d.). Octopus. In <i>Encyclopaedia Britannica</i>. <a href="https://www.britannica.com/animal/octopus-mollusk">https://www.britannica.com/animal/octopus-mollusk</a></li>
+            <li>Library of Congress. (n.d.). <i>National Child Labor Committee collection</i> [Photographs by Lewis Hine]. <a href="https://www.loc.gov/pictures/collection/nclc/">https://www.loc.gov/pictures/collection/nclc/</a></li>
+            <li>Nobel Prize Outreach. (n.d.). <i>Albert Einstein: Facts</i>. NobelPrize.org. <a href="https://www.nobelprize.org/prizes/physics/1921/einstein/facts/">https://www.nobelprize.org/prizes/physics/1921/einstein/facts/</a></li>
+            <li>Nobel Prize Outreach. (n.d.). <i>The Nobel Prize in Physiology or Medicine 1973</i>. NobelPrize.org. <a href="https://www.nobelprize.org/prizes/medicine/1973/summary/">https://www.nobelprize.org/prizes/medicine/1973/summary/</a></li>
+            <li>Sinclair, U. (1906). <i>The jungle</i>. Doubleday, Page &amp; Company.</li>
+            <li>Tarbell, I. M. (1904). <i>The history of the Standard Oil Company</i>. McClure, Phillips &amp; Co.</li>
+          </ul>
+        </div>
+
+        <div class="biblio-group">
+          <h3>Web development references</h3>
+          <ul class="biblio">
+            <li>IBM. (n.d.). <i>IBM Plex Mono</i> [Typeface]. Google Fonts. <a href="https://fonts.google.com/specimen/IBM+Plex+Mono">https://fonts.google.com/specimen/IBM+Plex+Mono</a></li>
+            <li>MDN Web Docs. (n.d.). <i>SpeechSynthesis</i>. Mozilla. <a href="https://developer.mozilla.org/en-US/docs/Web/API/SpeechSynthesis">https://developer.mozilla.org/en-US/docs/Web/API/SpeechSynthesis</a></li>
+            <li>MDN Web Docs. (n.d.). <i>Web Storage API</i>. Mozilla. <a href="https://developer.mozilla.org/en-US/docs/Web/API/Web_Storage_API">https://developer.mozilla.org/en-US/docs/Web/API/Web_Storage_API</a></li>
+            <li>Production Type. (n.d.). <i>Newsreader</i> [Typeface]. Google Fonts. <a href="https://fonts.google.com/specimen/Newsreader">https://fonts.google.com/specimen/Newsreader</a></li>
+            <li>World Wide Web Consortium. (2023). <i>Web Content Accessibility Guidelines (WCAG) 2.2</i>. <a href="https://www.w3.org/TR/WCAG22/">https://www.w3.org/TR/WCAG22/</a></li>
+          </ul>
+        </div>
+      </section>
+    </main>
+
+    <footer class="container site-footer">
+      <p>VeriMind • 2026-2027 TSA Webmaster entry (grades 9-12)</p>
+      <div class="footer-links">
+        <a href="about.html" aria-current="page">About &amp; TSA docs</a>
+        <a href="challenge.html">Certificate</a>
+      </div>
+      <div class="footer-controls">
+        <label class="demo-switch" for="judge-mode-toggle">
+          <input type="checkbox" id="judge-mode-toggle" role="switch" />
+          <span class="switch-track" aria-hidden="true"></span>
+          <span>Judge Demo Mode</span>
+          <span class="switch-state" aria-hidden="true">Off</span>
+        </label>
+        <button type="button" class="btn-text" id="reset-progress">Reset progress</button>
+      </div>
+    </footer>
+  </div>
+</body>
+</html>

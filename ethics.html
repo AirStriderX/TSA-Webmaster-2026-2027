@@ -1,0 +1,324 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Ethical AI &amp; Media | VeriMind</title>
+  <meta name="description" content="Module 3: AI and academic integrity, algorithmic bias, a clickable deepfake and voice-clone spotter, and three honor-code cases." />
+  <link rel="stylesheet" href="style.css" />
+  <script src="js/progress.js" defer></script>
+  <script src="js/interactives.js" defer></script>
+</head>
+<body data-page="ethics">
+  <a class="skip-link" href="#main">Skip to main content</a>
+  <div class="page">
+    <header class="floating-nav">
+      <a href="index.html" class="brand" aria-label="VeriMind home">
+        <span class="brand-icon" aria-hidden="true"></span>
+        <span class="brand-text">VERIMIND</span>
+      </a>
+
+      <nav class="nav-links" aria-label="Main Navigation">
+        <a href="index.html">Dashboard</a>
+        <a href="foundations.html">Foundations</a>
+        <a href="tools.html">Tools</a>
+        <a href="ethics.html" class="active" aria-current="page">Ethics</a>
+        <a href="challenge.html">Challenge</a>
+      </nav>
+
+      <div class="xp-badge" id="nav-xp">0 / 400 XP</div>
+    </header>
+
+    <aside class="judge-banner" id="judge-banner" aria-label="Judge tour" hidden></aside>
+
+    <main id="main">
+      <section class="container hero hero-module">
+        <span class="eyebrow">Module 3 of 3 • +100 XP</span>
+        <h1>Ethical AI &amp; Media</h1>
+        <p class="hero-desc">
+          AI can help you study, or it can land you in an honor-code meeting. It can also fake photos and voices well enough to fool people. This module covers where the lines are and how to catch a fake.
+        </p>
+        <div class="hero-buttons">
+          <a href="#integrity-title" class="btn-primary">Start with the rules</a>
+          <a href="#spotter-title" class="btn-secondary">Skip to the Deepfake Spotter</a>
+        </div>
+      </section>
+
+      <!-- Lesson: academic integrity vs. plagiarism -->
+      <section class="container section-block" aria-labelledby="integrity-title">
+        <div class="section-heading">
+          <h2 id="integrity-title">Using AI without cheating</h2>
+        </div>
+
+        <div class="lesson-grid">
+          <div class="prose">
+            <p>
+              Using AI isn't automatically cheating, and it isn't automatically fine. It depends on what your teacher allows for that specific assignment. Two classes at the same school can have completely different rules, so check every time, and ask before you start if the rules aren't clear.
+            </p>
+            <p>
+              Plagiarism means passing off someone else's words or ideas as your own. Many schools now treat turning in AI-written work the same way, even though no person wrote it. Rewording AI text so it sounds like you doesn't change that.
+            </p>
+
+            <div class="rule-cols">
+              <div class="rule-col rule-ok">
+                <h3>Usually fine, if your teacher allows AI</h3>
+                <ul>
+                  <li>Brainstorming topics or thesis ideas, then choosing one and writing it yourself</li>
+                  <li>Asking for an explanation of a concept you're stuck on</li>
+                  <li>Having it quiz you before a test</li>
+                  <li>Getting feedback on a draft and making the fixes yourself</li>
+                  <li>Checking grammar on writing you already finished</li>
+                </ul>
+              </div>
+              <div class="rule-col rule-no">
+                <h3>Crosses the line</h3>
+                <ul>
+                  <li>Turning in AI-written text as your own</li>
+                  <li>Rewording AI text so your teacher won't notice</li>
+                  <li>Using AI on a test or assignment that says no AI</li>
+                  <li>Keeping a quote or source from AI without checking it's real</li>
+                  <li>Making up data for a lab report</li>
+                </ul>
+              </div>
+            </div>
+
+            <h3>Tell your teacher what you used</h3>
+            <p>
+              When AI helps on an assignment and it's allowed, say so. MLA and APA both have formats for citing AI tools now, and a short note at the end works too:
+            </p>
+            <blockquote class="disclosure-example">
+              I used ChatGPT to brainstorm three possible thesis statements and picked the second one. I wrote the essay myself and checked every fact against my sources.
+            </blockquote>
+          </div>
+
+          <div>
+            <aside class="side-note" aria-labelledby="detector-title">
+              <span class="note-label" id="detector-title">AI detectors get it wrong</span>
+              <p>
+                In a 2023 Stanford study, seven popular AI detectors flagged more than half of the essays written by non-native English speakers as AI-generated, on average. Those essays were written by people.
+              </p>
+              <p>
+                That's algorithmic bias: a tool built from data ends up treating one group unfairly. A detector score alone shouldn't be the proof that someone cheated.
+              </p>
+            </aside>
+            <aside class="side-note" aria-labelledby="bias-title">
+              <span class="note-label" id="bias-title">Bias shows up in other AI too</span>
+              <p>
+                The 2018 Gender Shades study tested commercial face-analysis software. It got the gender wrong for darker-skinned women up to 34.7% of the time, compared with 0.8% for lighter-skinned men. The researchers also found that two common face datasets used to test these systems were made up mostly of lighter-skinned faces.
+              </p>
+            </aside>
+          </div>
+        </div>
+      </section>
+
+      <!-- Interactive: synthetic media & deepfake spotter -->
+      <section class="container section-block" aria-labelledby="spotter-title">
+        <div class="section-heading">
+          <h2 id="spotter-title">Synthetic Media &amp; Deepfake Spotter</h2>
+        </div>
+        <p class="section-intro">
+          A deepfake is a photo, video, or audio clip made with AI so it looks or sounds real. Both samples below are fakes we made for practice, so there's no real person in them. Click the round markers on the post and the underlined phrases in the voicemail. Some spots are clues and some are normal. Find all 9 clues to finish the spotter.
+        </p>
+
+        <div id="deepfake-spotter">
+          <!-- Sample 1: visual -->
+          <div class="specimen-grid">
+            <div>
+              <h3 class="specimen-title">Sample 1: the viral post</h3>
+              <div class="post-frame">
+                <div class="post-head">
+                  <span class="post-avatar" aria-hidden="true"></span>
+                  <span class="post-handle">@hallway.news.daily</span>
+                  <span class="post-time">2h</span>
+                </div>
+                <div class="specimen" id="df-image">
+                  <svg viewBox="0 0 600 400" xmlns="http://www.w3.org/2000/svg" role="img" aria-labelledby="df-svg-title df-svg-desc">
+                    <title id="df-svg-title">Practice fake: a student holding a sign about Friday</title>
+                    <desc id="df-svg-desc">An illustration made for this lesson. A student stands in a school hallway between a sunny window on the left and a row of lockers on the right, holding a hand-lettered sign.</desc>
+                    <!-- Wall and floor -->
+                    <rect width="600" height="400" fill="#ede6d6" />
+                    <rect y="330" width="600" height="70" fill="#d8cfb9" />
+                    <line x1="0" y1="330" x2="600" y2="330" stroke="#151b17" stroke-width="2" />
+                    <!-- Window: the light source, on the left -->
+                    <polygon points="146,60 146,190 370,330 270,330" fill="#f1d75a" opacity="0.28" />
+                    <rect x="34" y="40" width="112" height="150" fill="#fbf9f4" stroke="#151b17" stroke-width="3" />
+                    <circle cx="64" cy="72" r="15" fill="#f1d75a" stroke="#151b17" stroke-width="2" />
+                    <line x1="90" y1="40" x2="90" y2="190" stroke="#151b17" stroke-width="2" />
+                    <line x1="34" y1="115" x2="146" y2="115" stroke="#151b17" stroke-width="2" />
+                    <!-- Lockers (normal) -->
+                    <g stroke="#151b17" stroke-width="2">
+                      <rect x="440" y="70" width="50" height="260" fill="#94b49f" />
+                      <rect x="490" y="70" width="50" height="260" fill="#94b49f" />
+                      <rect x="540" y="70" width="50" height="260" fill="#94b49f" />
+                      <path d="M452 90 h26 M452 98 h26 M452 106 h26 M502 90 h26 M502 98 h26 M502 106 h26 M552 90 h26 M552 98 h26 M552 106 h26" />
+                    </g>
+                    <g fill="#151b17">
+                      <rect x="478" y="190" width="5" height="22" />
+                      <rect x="528" y="190" width="5" height="22" />
+                      <rect x="578" y="190" width="5" height="22" />
+                    </g>
+                    <!-- Shadow: falls LEFT, toward the window (clue) -->
+                    <g fill="#151b17" opacity="0.17">
+                      <ellipse cx="212" cy="190" rx="47" ry="54" />
+                      <path d="M137 330 C137 282 158 250 212 250 C266 250 287 282 287 330 Z" />
+                    </g>
+                    <!-- Body -->
+                    <path d="M215 330 C215 282 238 250 290 250 C342 250 365 282 365 330 Z" fill="#3a6b4e" stroke="#151b17" stroke-width="2" />
+                    <rect x="277" y="222" width="26" height="32" fill="#c98f68" stroke="#151b17" stroke-width="2" />
+                    <!-- Ears -->
+                    <ellipse cx="245" cy="188" rx="8" ry="13" fill="#c98f68" stroke="#151b17" stroke-width="2" />
+                    <ellipse cx="335" cy="188" rx="8" ry="13" fill="#c98f68" stroke="#151b17" stroke-width="2" />
+                    <!-- Head and face -->
+                    <ellipse cx="290" cy="182" rx="45" ry="52" fill="#d9a27b" stroke="#151b17" stroke-width="2" />
+                    <path d="M244 176 C240 128 268 118 292 118 C322 118 342 134 336 176 C330 150 312 142 290 142 C268 142 252 150 244 176 Z" fill="#2b211c" stroke="#151b17" stroke-width="2" />
+                    <circle cx="273" cy="186" r="4.5" fill="#151b17" />
+                    <circle cx="307" cy="186" r="4.5" fill="#151b17" />
+                    <g fill="none" stroke="#151b17" stroke-width="2.5" stroke-linecap="round">
+                      <path d="M263 172 Q273 166 283 171" />
+                      <path d="M297 171 Q307 166 317 172" />
+                      <path d="M290 192 Q285 203 292 205" stroke-width="2" />
+                      <path d="M274 213 Q290 226 306 213" />
+                    </g>
+                    <!-- Earrings: hoop on one side, stud on the other (clue) -->
+                    <circle cx="243" cy="207" r="7" fill="none" stroke="#151b17" stroke-width="5" />
+                    <circle cx="243" cy="207" r="7" fill="none" stroke="#d8b23a" stroke-width="3" />
+                    <circle cx="337" cy="203" r="3.5" fill="#d8b23a" stroke="#151b17" stroke-width="1.2" />
+                    <!-- Forearms -->
+                    <path d="M228 288 L202 300 L202 320 L234 312 Z" fill="#3a6b4e" stroke="#151b17" stroke-width="2" />
+                    <path d="M352 288 L380 298 L380 318 L346 312 Z" fill="#3a6b4e" stroke="#151b17" stroke-width="2" />
+                    <!-- Sign with scrambled text (clue) -->
+                    <g transform="rotate(-3 290 300)">
+                      <rect x="198" y="262" width="184" height="80" fill="#fbf9f4" stroke="#151b17" stroke-width="2.5" />
+                      <text x="290" y="295" text-anchor="middle" font-family="IBM Plex Mono, Consolas, monospace" font-size="23" font-weight="700" fill="#9a2d15">NO SCOHOL</text>
+                      <text x="290" y="327" text-anchor="middle" font-family="IBM Plex Mono, Consolas, monospace" font-size="23" font-weight="700" fill="#9a2d15">FRDAIY!!</text>
+                    </g>
+                    <!-- Left hand: four fingers (normal) -->
+                    <g fill="#d9a27b" stroke="#151b17" stroke-width="1.5">
+                      <rect x="186" y="280" width="22" height="10" rx="5" />
+                      <rect x="186" y="292" width="22" height="10" rx="5" />
+                      <rect x="186" y="304" width="22" height="10" rx="5" />
+                      <rect x="186" y="316" width="22" height="10" rx="5" />
+                    </g>
+                    <!-- Right hand: six fingers (clue) -->
+                    <g fill="#d9a27b" stroke="#151b17" stroke-width="1.5">
+                      <rect x="370" y="260" width="22" height="10" rx="5" />
+                      <rect x="370" y="271" width="22" height="10" rx="5" />
+                      <rect x="370" y="282" width="22" height="10" rx="5" />
+                      <rect x="370" y="293" width="22" height="10" rx="5" />
+                      <rect x="370" y="304" width="22" height="10" rx="5" />
+                      <rect x="370" y="315" width="22" height="10" rx="5" />
+                    </g>
+                  </svg>
+                  <!-- Inspection markers are added by js/interactives.js -->
+                </div>
+                <p class="post-caption">PRINCIPAL CONFIRMED: no school this Friday!! share before they delete this</p>
+              </div>
+            </div>
+            <div class="spot-panel" aria-labelledby="df-visual-count">
+              <p class="spot-count" id="df-visual-count">Post: 0 of 4 clues found</p>
+              <ul class="spot-list" id="df-visual-log" aria-live="polite">
+                <li class="spot-empty">Click a marker on the image to inspect that spot.</li>
+              </ul>
+            </div>
+          </div>
+
+          <!-- Sample 2: audio -->
+          <div class="specimen-grid">
+            <div>
+              <h3 class="specimen-title">Sample 2: the voicemail</h3>
+              <div class="voicemail">
+                <div class="vm-head">
+                  <span class="vm-icon" aria-hidden="true"></span>
+                  <span class="post-handle">Voicemail from (555) 555-0147</span>
+                  <span class="post-time">0:14</span>
+                </div>
+                <button type="button" class="wave-btn" id="vm-wave" aria-label="Inspect the waveform of the recording">
+                  <svg id="vm-wave-svg" viewBox="0 0 300 56" preserveAspectRatio="none" aria-hidden="true"></svg>
+                  <span class="wave-hint" aria-hidden="true">Inspect the waveform</span>
+                </button>
+                <p class="transcript" id="vm-transcript"></p>
+                <div class="vm-actions lab-actions">
+                  <button type="button" class="btn-secondary" id="vm-play">Play it in a robot voice</button>
+                </div>
+              </div>
+            </div>
+            <div class="spot-panel" aria-labelledby="df-audio-count">
+              <p class="spot-count" id="df-audio-count">Voicemail: 0 of 5 clues found</p>
+              <ul class="spot-list" id="df-audio-log" aria-live="polite">
+                <li class="spot-empty">Click the waveform or any underlined phrase to inspect it.</li>
+              </ul>
+            </div>
+          </div>
+
+          <div class="feedback is-correct" id="df-done" tabindex="-1" hidden></div>
+        </div>
+
+        <div class="statement spotter-tips">
+          <span class="note-label">Checks that work on real fakes</span>
+          <p>
+            Zoom in on hands, teeth, ears, and jewelry, and read every bit of text in the image. Make sure the light and the shadows agree. Then look past the image itself. Who posted it first? Does a reverse image search turn up an older original? Does it carry Content Credentials, a label some cameras and AI tools attach to show where a file came from?
+          </p>
+          <p>
+            For a call or voicemail that sounds like someone you know, hang up and call them back on the number you already have saved.
+          </p>
+        </div>
+      </section>
+
+      <!-- Scenarios: honor-code cases -->
+      <section class="container section-block" aria-labelledby="cases-title">
+        <div class="section-heading">
+          <h2 id="cases-title">Honor-code cases</h2>
+        </div>
+        <p class="section-intro">
+          Three situations that could easily happen at your school. Pick what you'd do and you'll see how it plays out. You can change your answer, and you finish this part once you've found the best move in all three.
+        </p>
+        <div class="scenario-list" id="honor-scenarios"></div>
+      </section>
+
+      <!-- Module wrap-up -->
+      <section class="container section-block" aria-labelledby="badge-title">
+        <div class="section-heading">
+          <h2 id="badge-title">Your Module 3 badge</h2>
+        </div>
+        <div class="module-finish" data-badge-flag="ethics">
+          <div class="badge-card" data-badge-slot="ethics">
+            <div class="badge-circle">
+              <span class="badge-number" aria-hidden="true">03</span>
+              <img class="badge-art" src="assets/badge-ethics.svg" alt="" width="52" height="52" />
+            </div>
+            <h3>Ethics Guardian</h3>
+            <p>Worth 100 XP.</p>
+            <span class="badge-status">Locked</span>
+          </div>
+          <div class="finish-copy">
+            <ul class="step-checklist">
+              <li data-step="ethics:spotter"><span>Deepfake Spotter</span><span class="step-state">Not yet</span></li>
+              <li data-step="ethics:scenarios"><span>Honor-code cases</span><span class="step-state">Not yet</span></li>
+            </ul>
+            <p class="when-locked">Finish both parts to earn this badge.</p>
+            <p class="when-earned">Badge earned. If you have all three, the Final Challenge is open.</p>
+            <a class="btn-primary" href="challenge.html">Go to the Final Challenge</a>
+          </div>
+        </div>
+      </section>
+    </main>
+
+    <footer class="container site-footer">
+      <p>VeriMind • 2026-2027 TSA Webmaster entry (grades 9-12)</p>
+      <div class="footer-links">
+        <a href="about.html">About &amp; TSA docs</a>
+        <a href="challenge.html">Certificate</a>
+      </div>
+      <div class="footer-controls">
+        <label class="demo-switch" for="judge-mode-toggle">
+          <input type="checkbox" id="judge-mode-toggle" role="switch" />
+          <span class="switch-track" aria-hidden="true"></span>
+          <span>Judge Demo Mode</span>
+          <span class="switch-state" aria-hidden="true">Off</span>
+        </label>
+        <button type="button" class="btn-text" id="reset-progress">Reset progress</button>
+      </div>
+    </footer>
+  </div>
+</body>
+</html>
